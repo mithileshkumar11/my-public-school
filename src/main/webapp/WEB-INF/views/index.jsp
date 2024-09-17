@@ -15,13 +15,42 @@
     </head>
     <body> 
    
-    <!-- This is a header jsp file added -->
+   	<!-- This is a header jsp file added -->
 	 <jsp:include page="include/header.jsp"></jsp:include>
     
     
+    <main class="container-fluid">
     
-          
-		
+    	<c:if test="${userClickOnHome == true}">
+			<!-- This is a myCarousel jsp file added -->
+			<%@ include file="include/myCarousel.jsp"%>	
+					
+			<!-- This is a main jsp file added -->	 
+		 	<%@ include file="pages/main.jsp"%>	
+		 </c:if> 
+    	
+    	<c:if test="${userClickOnAboutUs == true}">
+			<!-- This is a About_us jsp file added -->
+			<%@ include file="pages/about_us.jsp"%>	
+		 </c:if> 
+		 
+		 <c:if test="${userClickOnContactUs == true}">
+			<!-- This is a Contact_us jsp file added -->
+			<%@ include file="pages/contact_us.jsp"%>	
+		 </c:if> 
+		 
+		 <c:if test="${userClickOnLogin == true}">
+			<!-- This is a login jsp file added -->
+			<%@ include file="pages/login.jsp"%>	
+		 </c:if>
+    </main>
+    
+    
+    
+    
+		<!-- This is a footer jsp file added -->
+    	<jsp:include page="include/footer.jsp"></jsp:include>
+      	
 		<script src="${contextRoot}/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="${contextRoot}/assets/js/custom.js"></script>
     </body>
